@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",
     "chai": "^4.1.2",
     "connect-flash": "^0.1.1",
@@ -30,12 +30,22 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "git+https://github.com/ChefTeam1/Project1.git"
+=======
+    "url": "git+https://github.com/chelsg7/Project1.git"
+>>>>>>> 97dd7590591cd419b57c790e90457896038c7aeb
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
     "url": "https://github.com/ChefTeam1/Project1/issues"
   },
   "homepage": "https://github.com/ChefTeam1/Project1#readme"
+=======
+    "url": "https://github.com/chelsg7/Project1/issues"
+  },
+  "homepage": "https://github.com/chelsg7/Project1#readme"
+>>>>>>> 97dd7590591cd419b57c790e90457896038c7aeb
 }
