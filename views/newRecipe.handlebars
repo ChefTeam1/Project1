@@ -40,267 +40,134 @@
 </div>
 <section class="section">
     <div class="container">
-            <div class="tile is-ancestor">
-                <div class="tile is-parent is-vertical">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-vertical">
                 <article class="tile is-child notification is-info">
                     <div class="content">
                         <p class="title has-text-centered">
                             Recipe of the Day
                         </p>
-                        {{!-- <p class="subtitle">
-                            Rating?
-                        </p> --}}
-                        <div class="content box">
-                        </div>
+                    </div>
+                    <div class="content box">
                     </div>
                 </article>
-                <article class="tile is-child notification is-success">
+                <article class="tile is-child notification is-danger">
                     <div class="content">
                         <p class="title has-text-centered">
                             Top Contributers
                         </p>
-                        {{!-- <p class="subtitle">
-                            OR Reviews ????
-                        </p> --}}
-                        <div class="content box">
-                        </div>
+                    </div>
+                    <div class="content box">
                     </div>
                 </article>
             </div> <!-- contains login and extra box - column beside search-->
             <div class="tile is-vertical is-8">
                 <div class="tile is-parent">
-                    <article class="tile notification is-danger">
-                            <div id="content">
-
-                            <form method="POST" action="/new-post">
-                                <p class="title has-text-centered">
-                                    Add a New Recipe
-                                </p>
-                                <div class="content">
-                                    <p class="subtitle has-text-centered">
-                                        What are you Going to Add ?
-                                    </p>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label class="label">
-                                                Recipe Name:
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control is-expanded">
-                                                    <input class="input" type="text" name="title" placeholder="Recipe Name" id="dishName">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label class="label">
-                                                Image URL
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control is-expanded">
-                                                    <input class="input" type="text" name="image" placeholder="URL" id="dishName">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label class="label">
-                                                Ingredients:
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <textarea class="textarea" name="ingredients" placeholder="Explain how we can help you">
-                                                    </textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label class="label">
-                                                Steps
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <textarea class="textarea" name="steps" placeholder="Explain how we can help you">
-                                                    </textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label class="label">
-                                                Health Label:
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control is-expanded">
-                                                    <input class="input" type="text" name="healthlabel" placeholder="Recipe Name" id="dishName">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{!--
-                                    <div class="field is-horizontal">
-                                        <div class="field-label">
-                                            <label class="label">
-                                                Allergy Information + Dietary Restrictions:
-                                            </label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field is-grouped is-grouped-multiline">
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Wheat-Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Tree-Nut-Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Vegan
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Soy Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Pescatarian
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Shellfish Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Dairy Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Gluten Free
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox"> Low Sugar
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Vegetarian
-                                                    </label>
-                                                </div>
-                                                <div class="control">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" id="healthLabel"> Paleo
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <!-- end grouped field-->
-                                        </div>
-                                    </div> --}}
-                                    <div class="field is-horizontal">
-                                        <div class="field-label">
-                                            <!-- Left empty for spacing -->
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <button class="button is-primary recipeBtn" type="submit">
-                                                        Submit
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end dietary restrictions-->
-                                </div> <!--end content-->
-
-                                </form>
-                            </div> <!-- end search id-->
-                        </article> <!-- end add new tile-->
+                    <article class="tile is-child notification is-success">
+                        <div class="content">
+                            <p class="title has-text-centered">
+                                Add a New Recipe
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                What are you Going to Add ?
+                            </p>
                         </div>
-                    </div>
-                        <div class="tile is-parent is-vertical">
-                            <!-- <article class="tile is-child notification is-primary">
-                                <p class="title has-text-centered">
-                                    Recipe Search Results
-                                </p>
-                                <p class="subtitle has-text-centered">
-                                    Results will display below
-                                </p>
-                                <div id="recipeResult">
-                                    <h1 id="recipeTitle"></h1>
-                                    <div id='recipeImg'></div>
-                                    <div id='recipeIngredients'></div>
-                                    <div id='recipeSteps'></div>
-                                </div>
-                            </article> -->
-                    <!-- <article class="tile is-child notification is-warning">
-                                <p class="title">
-                                    Reviews could go here ? 
-                                </p>
-                                <p class="subtitle">
-                                    Whatever you want
-                                </p>
-                            </article>
-                            <article class="tile is-child notification is-primary">
-                                <p class="title">
-                                    How many tiles for whatever purpose
-                                </p>
-                                <p class="subtitle">
-                                    Maybe just top recipes or idk ???
-                                </p>
-                            </article>
-                            <article class="tile is-child notification is-warning">
-                                <p class="title">
-                                    ...tiles
-                                </p>
-                                <p class="subtitle">
-                                    Bottom tile
-                                </p>
-                            </article>
-                        </div> <!-- end vert 2 tile div-->
-                        
-                    </div>
-                </div> <!--end is-8 vertical -->
-        </div>
-        </section>
-        <footer class="footer">
-                <div class="container">
-                    <div class="content has-text-centered">
-                        <p>
-                            blah blah blah (for now)
-                        </p>
-                    </div>
-                </div>
-                <!-- end vert 2 tile div-->
-
-            </div>
-        </div>
-        <!--end is-8 vertical -->
-        </div>
-    </section>
+                        <div class="content box">
+                            <form method="POST" action="/new-post" class = "is-expanded">
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">
+                                            Recipe Name:
+                                        </label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded">
+                                                <input class="input" type="text" name="title" placeholder="Recipe Name" id="dishName">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end first field-->
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">
+                                            Image URL
+                                        </label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded">
+                                                <input class="input" type="text" name="image" placeholder="URL" id="dishURL">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end xecond field -->
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">
+                                            Ingredients:
+                                        </label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea" name="ingredients" placeholder="List the Recipe Ingredients">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end third field -->
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">
+                                            Steps
+                                        </label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea" name="steps" placeholder="Explain how to make this Recipe">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end fourth field-->
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">
+                                            Dietary Restrictions:
+                                        </label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded">
+                                                <input class="input" type="text" name="healthlabel" placeholder="Special Dietary Concerns" id="dishDiet">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end last div -->
+                                <div class="field is-horizontal">
+                                    <div class="field-label">
+                                        <!-- Left empty for spacing -->
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                                <button class="button is-primary recipeBtn" type="submit">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end button field-->
+                            </form>
+                        </div>
+                    </article> <!-- end tile-->
+                </div> <!-- is parent-->
+            </div> <!-- is vertical-->
+        </div> <!-- is-ancestor-->
+    </div> <!-- container-->
+</section>
     <footer class="footer">
         <div class="container">
             <div class="content has-text-centered">
