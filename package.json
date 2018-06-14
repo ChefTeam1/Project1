@@ -1,5 +1,5 @@
 {
-  "name": "groupproject2",
+  "name": "project1",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChefTeam1/Project1"
+    "url": "git+https://github.com/ChefTeam1/Project1.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ChefTeam1/Project1"
+    "url": "https://github.com/ChefTeam1/Project1/issues"
   },
   "homepage": "https://github.com/ChefTeam1/Project1#readme"
 }

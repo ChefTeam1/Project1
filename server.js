@@ -64,7 +64,8 @@ var mysql = require("mysql");
 // Passport stuff
 ////////////////////////////////////////////////////////
 
-Recipe.sync();
+
+Recipe.sync({force:true});
 Users.sync({force:true});
 
 app.use(express.static(__dirname + '/public'));
