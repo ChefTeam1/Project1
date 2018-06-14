@@ -1,30 +1,33 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Recipes', {
+    return queryInterface.createTable('HealthLabels', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      paleo: {
         type: Sequelize.STRING
       },
-      image: {
+      keto: {
         type: Sequelize.STRING
       },
-      // ingredients: {
-      //   type: Sequelize.STRING
-      // },
-      pProsteps: {
+      vegetarian: {
         type: Sequelize.STRING
       },
-      healthlabel: {
+      vegan: {
         type: Sequelize.STRING
       },
-      score: {
-        type: Sequelize.INTEGER
+      dairyfree: {
+        type: Sequelize.STRING
+      },
+      lowsugar: {
+        type: Sequelize.STRING
+      },
+      glutenfree: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +40,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Recipes');
+    return queryInterface.dropTable('HealthLabels');
   }
 };

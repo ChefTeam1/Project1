@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <title>
         RecipeMe Page
@@ -8,84 +9,110 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Bulma StyleSheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    
+
     <!-- FontAwesome -->
-    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+
     <!-- Stylesheet tags -->
 </head>
+
 <body>
-    <div class = "container">
+    <div class="container">
         {{> navbar/navpart}}
     </div>
-<section class="section">
-    <div class="container">
+    <section class="section">
+        <div class="container">
             <div class="tile is-ancestor">
-                    <div class="tile is-parent is-8">
-                        <article class="tile is-child notification is-danger">
-                            <div class = "content" method="GET" action="/posts/:id">
-                            
+                <div class="tile is-parent is-8">
+                    <article class="tile is-child notification is-danger">
+                        <div class="content" method="GET" action="/database/">
+                           <div id="search">
+                            <p class="title has-text-centered">
+                                Recipe Database
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                Top Recipes
+                                 {{#each recipes}}
+                            <div>
+                                 {{this.title}}
                             </div>
-                            <div id="search">
-                                <p class="title has-text-centered">
-                                    Recipe Database
-                                </p>
-                                <p class="subtitle has-text-centered">
-                                    Top Recipes
-                                </p>
-                                <div class = "content">
+                            <div>
+                                {{this.image}}
+                            </div>
+                            <div>
+                                Ingredients: {{this.ingredients}}
+                            </div>
+                            <div>
+                                Steps: {{this.steps}}
+                            </div>
+                            <div>
+                                Score: {{this.score}}
+                            </div>
+                            {{/each}}
+                            </p>
+                            <div class="content">
+
+
+                           
 
                                 </div> <!--end content-->
+                        </div>
+                        
                             </div> <!-- end search id-->
                         </article> <!-- end red tile-->
                     </div>
                     <div class="tile is-parent is-vertical">
 
-                            <article class="tile is-child notification is-warning">
-                                <p class="title has-text-centered">
-                                    Top Recipe
-                                </p>
-                                <p class="subtitle has-text-centered">
-                                    Date
-                                </p>
-                                <div class ="content box">
 
-                                </div>
-                            </article>
-                            <article class="tile is-child notification is-primary">
-                                <p class="title has-text-centered">
-                                    Top Chef
-                                </p>
-                                <p class="subtitle has-text-centered">
-                                    This Week:
-                                </p>
-                                <div class = "content box">
-
-                                </div>
-                            </article>
-                            <article class="tile is-child notification is-warning">
-                                <p class="title">
-                                    ...tiles
-                                </p>
-                                <p class="subtitle">
-                                    Bottom tile
-                                </p>
-                            </article>
-                        </div> <!-- end vert 2 tile div-->
-                </div> <!--end is-8 vertical -->
-        </div>
-        </section>
-        <footer class="footer">
-                <div class="container">
-                    <div class="content has-text-centered">
-                        <p>
-                            blah blah blah (for now)
+                    <article class="tile is-child notification is-warning">
+                        <p class="title has-text-centered">
+                            Top Recipe
                         </p>
-                    </div>
+                        <p class="subtitle has-text-centered">
+                            Date
+                        </p>
+                        <div class="content box">
+
+                        </div>
+                    </article>
+                    <article class="tile is-child notification is-primary">
+                        <p class="title has-text-centered">
+                            Top Chef
+                        </p>
+                        <p class="subtitle has-text-centered">
+                            This Week:
+                        </p>
+                        <div class="content box">
+
+                        </div>
+                    </article>
+                    <article class="tile is-child notification is-warning">
+                        <p class="title">
+                            ...tiles
+                        </p>
+                        <p class="subtitle">
+                            Bottom tile
+                        </p>
+                    </article>
                 </div>
-            </footer>
-        </body>
-        </html>
+                <!-- end vert 2 tile div-->
+            </div>
+            <!--end is-8 vertical -->
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    blah blah blah (for now)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

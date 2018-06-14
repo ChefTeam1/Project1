@@ -42,3 +42,9 @@
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 █░░░░░░░░▀█▄▀▄▀██████░▀█▄▀▄▀██████                                    
 ░░░░ ░░░░░░░▀█▄█▄███▀░░░ ▀█▄█▄███
+
+
+
+input ingredients and steps
+    10 input boxes -- add to ingredients and steps table
+    update handlebars 

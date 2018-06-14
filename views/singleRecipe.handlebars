@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <title>
         RecipeMe Page
@@ -8,30 +9,56 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Bulma StyleSheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    
+
     <!-- FontAwesome -->
-    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+
     <!-- Stylesheet tags -->
 </head>
+
 <body>
-    <div class = "container">
+    <div class="container">
         {{> navbar/navpart}}
     </div>
-<section class="section">
-    <div class="container">
+    <section class="section">
+        <div class="container">
             <div class="tile is-vertical">
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-danger">
-                            <div class = "content">
-                                DATA WILL GO HERE
-                            </div>
-                        </article> <!-- end red tile-->
-                        <div class="tile is-parent is-vertical">
-                            <!-- <article class="tile is-child notification is-primary">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <div class="content">
+                            <h1>{{recipe.title}}</h1>
+                            <div>createdAt: {{recipe.createdAt}}</div>
+                            <h2>Image: {{recipe.image}}</h2>
+                            <h2>Ingredients: 
+                                {{#each ingredients}}
+                                {{ingredients.ing1}}
+                                {{ingredients.ing2}}
+                                {{ingredients.ing3}}
+                                {{ingredients.ing4}}
+                                {{ingredients.ing5}}
+                                {{ingredients.ing6}}
+                                {{ingredients.ing7}}
+                                {{ingredients.ing8}}
+                                {{ingredients.ing9}}
+                                {{ingredients.ing10}}
+                                {{ingredients.ing11}}
+                                {{ingredients.ing12}}
+                                {{ingredients.ing13}}
+                                {{ingredients.ing14}}
+                                {{ingredients.ing15}}
+                                {{/each}}
+                                </h2>
+                            <h2>Steps: {{recipe.steps}}</h2>
+                            <h2>Score: {{recipe.score}}</h2>
+                        </div>
+                    </article>
+                    <!-- end red tile-->
+                    <div class="tile is-parent is-vertical">
+                        <!-- <article class="tile is-child notification is-primary">
                                 <p class="title has-text-centered">
                                     Recipe Search Results
                                 </p>
@@ -45,7 +72,7 @@
                                     <div id='recipeSteps'></div>
                                 </div>
                             </article> -->
-                            <!-- <article class="tile is-child notification is-warning">
+                        <!-- <article class="tile is-child notification is-warning">
                                 <p class="title">
                                     Reviews could go here ? 
                                 </p>
@@ -69,20 +96,23 @@
                                     Bottom tile
                                 </p>
                             </article> -->
-                        </div> <!-- end vert 2 tile div-->
-                        
                     </div>
-                </div> <!--end is-8 vertical -->
-        </div>
-        </section>
-        <footer class="footer">
-                <div class="container">
-                    <div class="content has-text-centered">
-                        <p>
-                            blah blah blah (for now)
-                        </p>
-                    </div>
+                    <!-- end vert 2 tile div-->
+
                 </div>
-            </footer>
-        </body>
-        </html>
+            </div>
+            <!--end is-8 vertical -->
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    blah blah blah (for now)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
