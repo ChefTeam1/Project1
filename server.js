@@ -4,12 +4,13 @@ var handlebars = require('express-handlebars');
 var models = require('./models');
 var Recipe = require('./models')['Recipe'];
 var Users = require('./models')['Users'];
-<<<<<<< HEAD
-
-=======
 var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
->>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
+var Posts = require('./models')['Posts'];
+//var Recipe2 = require('./models')['Recipes2'];
+
+var Ingredients = require('./models')['Ingredients'];
+var Steps = require('./models')['Steps'];
 
 ///////////////////////////////////
 // passport stuff
@@ -69,10 +70,21 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 // Passport stuff
 ////////////////////////////////////////////////////////
 
+//Recipe2.sync();
+Posts.sync();
+Steps.sync();
+Ingredients.sync();
+Recipe.sync();
+Users.sync({
+    force: true
+});
+
+
 
 Ingredients.sync();
 Recipe.sync();
 Users.sync({force:true});
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -94,11 +106,25 @@ app.get('/', function (req, res) {
 });
 
 app.get('/newRecipe', function (req, res) {
+
+    res.render('newRecipe');
+
     res.render('newRecipe'); 
 });
 
 
 app.post('/newRecipe', function (req, res) {
+
+    // var recipe = req.body;
+    // Recipe.create({
+    //     title: recipe.title,
+    //     image: recipe.image,
+    //     // ingredients: recipe.ingredients,
+    //     // steps: recipe.steps,
+    //     healthlabel: recipe.healthlabel,
+    //     score: 0,
+
+
     var recipe = req.body;
     Recipe.create({
         title: recipe.title,
@@ -171,44 +197,155 @@ app.post('/new-post', function (req, res) {
     Recipe.create({
         title: recipe.title,
         image: recipe.image,
-        ingredients: recipe.ingredients,
-        steps: recipe.steps,
+        ing1: recipe.ingredients1,
+        ing2: recipe.ingredients2,
+        ing3: recipe.ingredients3,
+        ing4: recipe.ingredients4,
+        ing5: recipe.ingredients5,
+        step1: recipe.steps1,
+        step2: recipe.steps2,
+        step3: recipe.steps3,
+        step4: recipe.steps4,
+        step5: recipe.steps5,
         healthlabel: recipe.healthlabel,
-        score: 0,
+        score: 0
+
     }).then(function (data) {
         console.log('data', data);
         res.redirect('/recipes/' + data.dataValues.id);
     });
+
+    // Steps.create({
+    //     s1: recipe.steps1,
+    //     s2: recipe.steps2,
+    //     s3: recipe.steps3,
+    //     s4: recipe.steps4, 
+    //     s5: recipe.steps5,
+    //     s6: recipe.steps6,
+    //     s7: recipe.steps7,
+    //     s8: recipe.steps8,
+    //     s9: recipe.steps9,
+    //     s10: recipe.steps10,
+    //     s11: recipe.steps11,
+    //     s12: recipe.steps12,
+    //     s13: recipe.steps13,
+    //     s14: recipe.steps14,
+    //     s15: recipe.steps15
+    // }).then(function (data) {
+    //     console.log('data', data);
+    //     //res.redirect('/recipes/' + data.dataValues.id);
+    // });
+
+    // Ingredients.create({
+    //     ing1: recipe.ingredients1,
+    //     ing2: recipe.ingredients2,
+    //     ing3: recipe.ingredients3,
+    //     ing4: recipe.ingredients4,
+    //     ing5: recipe.ingredients5,
+    //     ing6: recipe.ingredients6,
+    //     ing7: recipe.ingredients7,
+    //     ing8: recipe.ingredients8,
+    //     ing9: recipe.ingredients9,
+    //     ing10: recipe.ingredients10,
+    //     ing11: recipe.ingredients11,
+    //     ing12: recipe.ingredients12,
+    //     ing13: recipe.ingredients13,
+    //     ing14: recipe.ingredients14,
+    //     ing15: recipe.ingredients15
+    // }).then(function (data) {
+    //     console.log('data', data);
+    //     res.redirect('/recipes/' + data.dataValues.id);
+    // });
 });
 
-//////////////////////////        
-// view single recipe        
+// //////////////////////////        
+// // view single recipe        
 app.get('/recipes/:id', function (req, res) {
     var id = req.params.id;
+    // var recipe;
+    // var steps;
     Recipe.findOne({
         where: {
             id: req.params.id
-        }
+        },
+
     }).then(function (recipe) {
-        console.log('singleRecipe', recipe);
+        // console.log('singleRecipe', recipe);
         res.render('singleRecipe', {
             recipe: recipe
         });
+       // recipe = result;
+        // console.log("saved recipe is ", recipe);
     });
+
+
+    // Steps.findOne({
+    //     where: {
+    //         id: req.params.id
+    //     },
+
+    // }).then(function (result) {
+    //     // console.log('singleRecipe', recipe);
+    //     // res.render('singleRecipe', {
+    //     //     recipe: recipe
+    //     // });
+    //     steps = result;
+    //     // console.log("/////////////////////////////////////////////////////////////////////////////////", steps);
+    // });
+
+    // Ingredients.findOne({
+    //     where: {
+    //         id: req.params.id
+    //     },
+
+    // }).then(function (ingredients) {
+
+    //     //console.log('spacer/////////////////////////////////////////////////////////////////');
+    //     //console.log(ingredients);
+
+    //     //console.log('singleRecipe', ingredients);
+    //     res.render('singleRecipe', {
+    //         ingredients: ingredients,
+    //         recipe: recipe,
+    //         steps: steps
+    //     });
+    // });
 
 });
 
-/////////////////////////
-// view all
+// /////////////////////////
+// // 
 
+app.get('/personal', function (req, res) {
+    res.render('personalPage');
+});
+app.get('/search', function (req, res) {
+    res.render('search');
+});
+app.get('/users', function (req, res) {
+    res.render('users');
+});
 
-app.get('/database/', function (req, res) {
-    
+// /////////////////////////// 
+// // recipe ranking
+
+app.get('/allrecipes/', function (req, res) {
+
+    // var recipe;
+    // var ingredients;
+
     Recipe.findAll({
-        // order: [
-        //     ['score', 'DESC']
-        // ]
+        order: [
+            ['score', 'DESC']
+        ]
     }).then(function (recipe) {
+
+        //console.log(Recipe.dataValues);
+        //console.log('//////////////////////////////////////////////////////////////////////////////////////////////////////////');
+        //console.log('allData', result);
+        //recipe = result;
+
+
 // /////////////////////////// 
 // // recipe ranking
 app.get('/allrecipes/', function (req, res) {
@@ -225,8 +362,82 @@ app.get('/allrecipes/', function (req, res) {
             recipes: recipe
         });
     });
-
 });
+// app.get('/allrecipes/', function (req, res) {
+
+//     var recipe;
+//     var ingredients;
+
+//     Recipe.findAll({
+//         order: [
+//             ['score', 'DESC']
+//         ]
+//     }).then(function (result) {
+//         //console.log(Recipe.dataValues);
+//         //console.log('//////////////////////////////////////////////////////////////////////////////////////////////////////////');
+//         //console.log('allData', result);
+//         recipe = result;
+
+//         // res.render('allData', {
+//         //     recipes: recipe
+//         // });
+//     });
+
+//     Ingredients.findAll({
+//         order: [
+//             ['score', 'DESC']
+//         ]
+//     }).then(function (result) {
+//         //console.log('allData', result);
+//         ingredients = result;
+//         // res.render('allData', {
+//         //     recipes: recipe
+//         // });
+//     });
+
+//     Steps.findAll({
+//         order: [
+//             ['score', 'DESC']
+//         ]
+//     }).then(function (steps) {
+//         //console.log('allData', result);
+//         console.log(recipe);
+//         res.render('allData', {
+//             ingredients: ingredients,
+//             recipes: recipe,
+//             steps: steps
+//         });
+//     });
+// });
+
+
+//////////////////////////////////////
+// $(document).ready(function () {
+
+
+//     $(document).on("click", "#upVote", increaseScore);
+
+
+//     function increaseScore() {
+
+//         router.put('/allrecipes/', function (req, res, next) {
+//             Recipe.update({
+//                     score: sequelize.literal('field + 1')
+//                 }, {
+//                     where: {
+//                         id: this.id
+//                     }
+//                 })
+//                 .then(function (rowsUpdated) {
+//                     res.redirect('/allrecipes/');
+//                 })
+//             // .catch(next)
+//         });
+//     };
+
+
+// });
+
 
 
 //////////////////////
@@ -242,6 +453,7 @@ app.get('/allrecipes/', function (req, res) {
 // //             res.render("allData", { recipes: data });
 // //           });
 // //         });
+
 
 
 // //////////////////////

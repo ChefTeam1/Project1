@@ -15,7 +15,21 @@ module.exports = (sequelize, DataTypes) => {
     // }
   }, {});
   Users.associate = function(models) {
-    // associations can be defined here
+    // Users.hasMany(models.Recipe, {
+    //   onDelete: "cascade"
+    // });
+    // Users.hasMany(models.Posts, {
+    //   onDelete: "cascade"
+    // });
   };
   return Users;
 };
+
+
+// users has one post
+// users has many recipes
+// post belongs to users
+
+//create btn in html for upvote/downvote
+// create js file for onclick event
+// 'on click' query database - increase score +- 1

@@ -1,77 +1,54 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Steps', {
+    return queryInterface.createTable('Recipes2', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      title: {
+        type: Sequelize.STRING
+      },
+      image: {
+        type: Sequelize.STRING
+      },
+      ing1: {
+        type: Sequelize.STRING
+      },
+      ing2: {
+        type: Sequelize.STRING
+      },
+      ing3: {
+        type: Sequelize.STRING
+      },
+      ing4: {
+        type: Sequelize.STRING
+      },
+      ing5: {
+        type: Sequelize.STRING
+      },
+      step1: {
+        type: Sequelize.STRING
+      },
+      step2: {
+        type: Sequelize.STRING
+      },
+      step3: {
+        type: Sequelize.STRING
+      },
+      step4: {
+        type: Sequelize.STRING
+      },
+      step5: {
+        type: Sequelize.STRING
+      },
       score: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0
-      },
-      s1: {
-        type: Sequelize.STRING
-      },
-      s2: {
-        type: Sequelize.STRING
-      },
-      s3: {
-        type: Sequelize.STRING
-      },
-      s4: {
-        type: Sequelize.STRING
-      },
-      s5: {
-        type: Sequelize.STRING
-      },
-      s6: {
-        type: Sequelize.STRING
-      },
-      s7: {
-        type: Sequelize.STRING
-      },
-      s8: {
-        type: Sequelize.STRING
-      },
-      s9: {
-        type: Sequelize.STRING
-      },
-      s10: {
-        type: Sequelize.STRING
-      },
-      s11: {
-        type: Sequelize.STRING
-      },
-      s12: {
-        type: Sequelize.STRING
-      },
-      s13: {
-        type: Sequelize.STRING
-      },
-      s14: {
-        type: Sequelize.STRING
-      },
-      s15: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
-
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
@@ -83,6 +60,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Steps');
+    return queryInterface.dropTable('Recipes2');
   }
 };

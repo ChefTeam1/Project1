@@ -8,6 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      score: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+      },
       ing1: {
         type: Sequelize.STRING
       },
@@ -55,13 +59,7 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-<<<<<<< HEAD
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-=======
+
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
@@ -69,16 +67,31 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
->>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
       }
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Ingredients');
   }
-<<<<<<< HEAD
-};
-=======
+
 };
 
->>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
+
+
+};
+
+};
+
+

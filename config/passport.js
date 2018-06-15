@@ -27,6 +27,7 @@ module.exports = function (passport) {
     // used to deserialize the user
     passport.deserializeUser(function (id, done) {
         connection.query("SELECT * FROM users WHERE id = ? ", [id], function (err, rows) {
+
             console.log(rows);
             done(err, rows[0]);
         });
@@ -110,6 +111,8 @@ module.exports = function (passport) {
                         return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
                     // all is well, return successful user
+
+                    return done(null, rows[0]);
                     return done(null, rows[0].id);
                    
                 });

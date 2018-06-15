@@ -31,11 +31,21 @@
                     <article class="tile is-child notification is-danger">
                         <div class="content">
                             <h1>{{recipe.title}}</h1>
+
+                            <img class="someClass" src="{{recipe.image}}" />
+
+                            <h2>Ingredients: {{recipe.ing1}} {{recipe.ing2}} {{recipe.ing3}} {{recipe.ing4}} {{recipe.ing5}}
+                                {{recipe.ing6}} {{recipe.ing7}} {{recipe.ing8}} {{recipe.ing9}} {{recipe.ing10}}
+
+                            </h2>
+                            <h2>Steps: {{recipe.step1}} {{recipe.step2}} {{recipe.step3}} {{recipe.step4}} {{recipe.step5}}
+
+
+                            </h2>
                             <div>createdAt: {{recipe.createdAt}}</div>
                             <h2>Image: {{recipe.image}}</h2>
-<<<<<<< HEAD
+
                             <h2>Ingredients: {{recipe.ingredients}}</h2>
-=======
                             <h2>Ingredients: 
                                 {{#each ingredients}}
                                 {{ingredients.ing1}}
@@ -55,7 +65,6 @@
                                 {{ingredients.ing15}}
                                 {{/each}}
                                 </h2>
->>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
                             <h2>Steps: {{recipe.steps}}</h2>
                             <h2>Score: {{recipe.score}}</h2>
                         </div>
