@@ -8,6 +8,10 @@ var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
 var Posts = require('./models')['Posts'];
 //var Recipe2 = require('./models')['Recipes2'];
+
+var Ingredients = require('./models')['Ingredients'];
+var Steps = require('./models')['Steps'];
+
 ///////////////////////////////////
 // passport stuff
 var session = require('express-session');
@@ -65,6 +69,7 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 // Passport stuff
 ////////////////////////////////////////////////////////
+
 //Recipe2.sync();
 Posts.sync();
 Steps.sync();
@@ -73,6 +78,13 @@ Recipe.sync();
 Users.sync({
     force: true
 });
+
+
+
+Ingredients.sync();
+Recipe.sync();
+Users.sync({force:true});
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -94,11 +106,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/newRecipe', function (req, res) {
+
     res.render('newRecipe');
+
+    res.render('newRecipe'); 
 });
 
 
 app.post('/newRecipe', function (req, res) {
+
     // var recipe = req.body;
     // Recipe.create({
     //     title: recipe.title,
@@ -108,6 +124,75 @@ app.post('/newRecipe', function (req, res) {
     //     healthlabel: recipe.healthlabel,
     //     score: 0,
 
+
+    var recipe = req.body;
+    Recipe.create({
+        title: recipe.title,
+        image: recipe.image,
+        // ingredients: recipe.ingredients,
+        // steps: recipe.steps,
+        healthlabel: recipe.healthlabel,
+        score: 0,
+    }).then(function (data) {
+        console.log('data', data);
+        // res.redirect('/recipes/' + data.dataValues.id);
+    });
+    
+    Ingredients.create({
+        ing1: recipe.ingredients
+    }).then(function (data) {
+        console.log('data', data);
+        res.redirect('/recipes/' + data.dataValues.id);
+    });
+});
+
+// //////////////////////////        
+// // view single recipe        
+app.get('/recipes/:id', function (req, res) {
+    var id = req.params.id;
+    var recipe;
+    Recipe.findOne({
+        where: {
+            id: req.params.id
+        },
+        
+    }).then(function (result) {
+        // console.log('singleRecipe', recipe);
+        // res.render('singleRecipe', {
+        //     recipe: recipe
+        // });
+        recipe = result;
+        console.log("saved recipe is ", recipe);
+    });
+    Ingredients.findOne({
+        where: {
+            id: req.params.id
+        },
+        
+    }).then(function (ingredients) {
+        console.log('singleRecipe', ingredients);
+        res.render('singleRecipe', {
+            ingredients: ingredients,
+            recipe: recipe
+        });
+    });
+
+});
+
+// /////////////////////////
+// // 
+
+app.get('/personal', function(req, res) {
+    res.render('personal');
+});
+app.get('/search', function(req, res) {
+    res.render('search');
+});
+app.get('/users', function(req, res) {
+    res.render('users');
+});
+
+app.post('/new-post', function (req, res) {
     var recipe = req.body;
     Recipe.create({
         title: recipe.title,
@@ -254,11 +339,25 @@ app.get('/allrecipes/', function (req, res) {
             ['score', 'DESC']
         ]
     }).then(function (recipe) {
+
         //console.log(Recipe.dataValues);
         //console.log('//////////////////////////////////////////////////////////////////////////////////////////////////////////');
         //console.log('allData', result);
         //recipe = result;
 
+
+// /////////////////////////// 
+// // recipe ranking
+app.get('/allrecipes/', function (req, res) {
+    
+    Recipe.findAll(
+        {
+        order: [
+            ['score', 'DESC']
+        ]
+    }
+).then(function (recipe) {
+        console.log('allData', recipe);
         res.render('allData', {
             recipes: recipe
         });
@@ -338,6 +437,23 @@ app.get('/allrecipes/', function (req, res) {
 
 
 // });
+
+
+
+//////////////////////
+//logins
+});
+
+// // app.get('/allrecipes/', function (req, res) {
+// //         connection.query("SELECT * FROM recipes;", function(err, data) {
+// //             if (err) {
+// //               return res.status(500).end();
+// //             }
+        
+// //             res.render("allData", { recipes: data });
+// //           });
+// //         });
+
 
 
 // //////////////////////

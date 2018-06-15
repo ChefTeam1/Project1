@@ -59,6 +59,19 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
+
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
@@ -72,5 +85,13 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Ingredients');
   }
+
 };
+
+
+
+};
+
+};
+
 

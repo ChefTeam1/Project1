@@ -29,12 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chelsg7/groupProject2.git"
+    "url": "git+https://github.com/ChefTeam1/Project1.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chelsg7/groupProject2/issues"
+    "url": "https://github.com/ChefTeam1/Project1/issues"
   },
-  "homepage": "https://github.com/chelsg7/groupProject2#readme"
+  "homepage": "https://github.com/ChefTeam1/Project1#readme"
 }

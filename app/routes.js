@@ -92,7 +92,7 @@
 
 	// process the login form
 	app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/profile', // redirect to the secure profile section
+            successRedirect : '/personal', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
 		}),
@@ -105,6 +105,7 @@
               req.session.cookie.expires = false;
             }
         res.redirect('/personalPage');
+        res.redirect('/personal');
     });
 
 	// =====================================
@@ -130,6 +131,7 @@
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/personal', isLoggedIn, function(req, res) {
 		res.render('personal.ejs', {
+		res.render('profile.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
