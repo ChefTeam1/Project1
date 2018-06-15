@@ -55,15 +55,30 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
+<<<<<<< HEAD
         type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+=======
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+>>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
       }
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Ingredients');
   }
+<<<<<<< HEAD
 };
+=======
+};
+
+>>>>>>> af3355088f0a52caee4c72e2220217fb0d6e4271
