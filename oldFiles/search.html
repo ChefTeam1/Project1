@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>
+        RecipeMe Page
+    </title>
+    <!-- Needed Tags-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bulma StyleSheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    
+    <!-- FontAwesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    
+    <!-- Stylesheet tags -->
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href = "../public/indexLogin.html" class ="navbar-item">
+                    <span class="icon is-large">
+                        <i class="fas fa-lg fa-utensils"></i>
+                    </span>
+                    <h1 class="title">
+                        RecipeMe
+                    </h1>
+                </a>
+            </div>
+            <p class = "navbar-item navbar-end">
+                <a class="button level"  href="../public/index2.html" disabled>
+                    <span class="icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    &nbsp; Search the Database
+                </a>
+            </p>
+            <p class = "navbar-item navbar-end">
+                <a class="button level"  href="../public/dbdisplay.html" disabled>
+                    <span class="icon">
+                        <i class="fas fa-book"></i>
+                    </span>
+                    &nbsp; View Recipe Database
+                </a>
+            </p>
+            <p class = "navbar-item navbar-end">
+                <a class="button level"  href="../public/dbdisplay.html" disabled>
+                    <span class="icon">
+                        <i class="fas fa-users"></i>
+                    </span>
+                    &nbsp; View Our Users
+                </a>
+            </p>
+            <p class = "navbar-item navbar-end">
+                <a class="button level"  href="../public/dbdisplay.html" disabled>
+                    <span class="icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </span>
+                    &nbsp; Add a Recipe
+                </a>
+            </p>
+            <p class = "level navbar-item navbar-end">
+                <a class="button level"  href="../public/savedPage.html" disabled>
+                    <span class="icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </span>
+                    &nbsp; Your Personal Home Page
+                </a>
+            </p>
+        </div>
+    </nav>
+<section class="section">
+    <div class="container">
+            <div class="tile is-vertical is-8">
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-danger">
+                            <div id="search">
+                                <p class="title has-text-centered">
+                                    Search Here
+                                </p>
+                                <div class = "content">
+                                    <p class="subtitle has-text-centered">
+                                        What kind of Recipe are you looking for?
+                                    </p>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">
+                                                Search By Name:
+                                            </label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control is-expanded">
+                                                    <input class="input" type="text" placeholder="Recipe Name" id="dishName">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">
+                                                Or By Ingredient:
+                                            </label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control is-expanded">
+                                                    <input class="input" type="text" placeholder="Ingredient" id="ingredientSearch">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">
+                                                Calories
+                                            </label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control   is-expanded">
+                                                    <input class="input" type="text" placeholder="Min Calories" id="calorieMin">
+                                                </p>
+                                            </div>
+                                            <div class="field">
+                                                <p class="control is-expanded">
+                                                    <input class="input" type="text" placeholder="Max Calories" id="calorieMax">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">
+                                                Sort By... ????
+                                            </label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field is-narrow">
+                                                <div class="control">
+                                                    <div class="select is-fullwidth">
+                                                        <select>
+                                                            <option>
+                                                                Choose One
+                                                            </option>
+                                                            <option>
+                                                                RecipeMe Rating
+                                                            </option>
+                                                            <option>
+                                                                Time Preparation
+                                                            </option>
+                                                            <option>
+                                                                Calorie Content
+                                                            </option>
+                                                            <option>
+                                                                Alphabetical
+                                                            </option>
+                                                            <option>
+                                                                I want to know if this box will expand to any content
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                                <label class="label">
+                                                    Do you have specific Dietary Restrictions?
+                                                </label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field is-grouped is-grouped-multiline">
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Wheat-Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Tree-Nut-Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Vegan
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Soy Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Pescatarian
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                            Shellfish Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Dairy Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Gluten Free
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                                Low Sugar
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Vegetarian
+                                                        </label>
+                                                    </div>
+                                                    <div class="control">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" id="healthLabel">
+                                                                Paleo
+                                                        </label>
+                                                    </div>
+                                                </div> <!-- end grouped field-->
+                                            </div>
+                                        </div>
+                                        <div class="field is-horizontal">
+                                            <div class="field-label">
+                                                <!-- Left empty for spacing -->
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <button class="button is-primary recipeBtn">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end dietary restrictions-->
+                                </div> <!--end content-->
+                            </div> <!-- end search id-->
+                        </article> <!-- end red tile-->
+                        <div class="tile is-parent is-vertical">
+                            <!-- <article class="tile is-child notification is-primary">
+                                <p class="title has-text-centered">
+                                    Recipe Search Results
+                                </p>
+                                <p class="subtitle has-text-centered">
+                                    Results will display below
+                                </p>
+                                <div id="recipeResult">
+                                    <h1 id="recipeTitle"></h1>
+                                    <div id='recipeImg'></div>
+                                    <div id='recipeIngredients'></div>
+                                    <div id='recipeSteps'></div>
+                                </div>
+                            </article> -->
+                            <!-- <article class="tile is-child notification is-warning">
+                                <p class="title">
+                                    Reviews could go here ? 
+                                </p>
+                                <p class="subtitle">
+                                    Whatever you want
+                                </p>
+                            </article>
+                            <article class="tile is-child notification is-primary">
+                                <p class="title">
+                                    How many tiles for whatever purpose
+                                </p>
+                                <p class="subtitle">
+                                    Maybe just top recipes or idk ???
+                                </p>
+                            </article>
+                            <article class="tile is-child notification is-warning">
+                                <p class="title">
+                                    ...tiles
+                                </p>
+                                <p class="subtitle">
+                                    Bottom tile
+                                </p>
+                            </article> -->
+                        </div> <!-- end vert 2 tile div-->
+                        
+                    </div>
+                </div> <!--end is-8 vertical -->
+        </div>
+        </section>
+        <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <p>
+                            blah blah blah (for now)
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </body>
+        </html>
