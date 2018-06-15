@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>
+        RecipeMe Page
+    </title>
+    <!-- Needed Tags-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bulma StyleSheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    
+    <!-- FontAwesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    
+    <!-- Stylesheet tags -->
+</head>
+<body>
+    {{> navbar/navpart}}
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-danger">
+                    <h1 class = "title has-text-centered">
+                        ___'s Profile
+                    </h1>
+                    <div class = "has-text-centered box">
+                        <h2>
+                            Welcome to this page!
+                        </h2>
+                        <p>
+                            total posts
+                        </p>
+                        <p>
+                            total comments
+                        </p>
+                        <p>
+                            total contributions
+                        </p>
+                    </div>
+                    <div class = "content">
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                                        <br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </article> <!-- end red tile-->
+            </div> <!-- end is-parent-->
+            <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-primary">
+                    <h1 class="title has-text-centered">
+                        Write on ___'s Wall
+                    </h1>
+                    <div class = "content">
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="field">
+                                    <p class="control">
+                                        <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                                    </p>
+                                </div>
+                                <nav class="level">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <a class="button is-info">
+                                                Submit
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="level-right">
+                                        <div class="level-item">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                Press enter to submit
+                                            </label>
+                                        </div>
+                                    </div> -->
+                                </nav>
+                            </div>
+                        </article> <!-- end media-->
+                    </div>
+                </article> <!-- end post tile-->
+                <article class="tile is-child notification is-warning">
+                    <p class="title has-text-centered">
+                        Wall
+                    </p>
+                    <p class="subtitle">
+                    </p>
+                    <div class="content">
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>Barbara Middleton</strong>
+                                        <br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+                                        <br>
+                                        <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+                                    </p>
+                                </div> <!-- break here if nesting comments w/ test nest below-->
+                                <article class="media">
+                                    <figure class="media-left">
+                                        <p class="image is-48x48">
+                                            <img src="https://bulma.io/images/placeholders/96x96.png">
+                                        </p>
+                                    </figure>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <strong>Sean Brown</strong>
+                                                <br>
+                                                Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
+                                                <br>
+                                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                            </p>
+                                        </div>
+                                        <article class="media">
+                                            Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
+                                        </article>
+                                    </div>
+                                </article>
+                            </div>
+                        </article> <!-- end media-->
+                    </div> <!-- end content-->
+                </article> <!-- end tile-->
+            </div> <!-- end parent-->
+        </div> <!-- end ancestor-->
+    </div> <!-- end container-->
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                blah blah blah (for now)
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+
+Add Comment

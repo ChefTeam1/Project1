@@ -14,9 +14,9 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
-      ingredients: {
-        type: Sequelize.STRING
-      },
+      // ingredients: {
+      //   type: Sequelize.STRING
+      // },
       pProsteps: {
         type: Sequelize.STRING
       },
