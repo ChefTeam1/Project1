@@ -65,8 +65,7 @@ var mysql = require("mysql");
 ////////////////////////////////////////////////////////
 
 
-
-Recipe.sync();
+Recipe.sync({force:true});
 Users.sync({force:true});
 
 app.use(express.static(__dirname + '/public'));
