@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 // app/routes.js
 // var express = require("express");
 // var bodyParser = require("body-parser");
@@ -80,14 +78,12 @@
 
 
 
-=======
+
 
  module.exports = function(app, passport) {
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-=======
 
- module.exports = function(app, passport) {
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
+
+// module.exports = function(app, passport) {
 
 
 	// =====================================
@@ -112,16 +108,11 @@
             if (req.body.remember) {
               req.session.cookie.maxAge = 1000 * 60 * 3;
             } else {
-              req.session.cookie.expires = false;
+				req.session.cookie.expires = false;
             }
         res.redirect('/personalPage');
-<<<<<<< HEAD
-<<<<<<< HEAD
-        res.redirect('/personal');
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
+
+        // res.redirect('/personal');
     });
 
 	// =====================================
@@ -146,16 +137,7 @@
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/personal', isLoggedIn, function(req, res) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-		res.render('personal.ejs', {
-		res.render('profile.ejs', {
-=======
 		res.render('personalPage', {
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-=======
-		res.render('personalPage', {
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 			user : req.user // get the user out of session and pass to template
 		});
 	});
@@ -178,4 +160,4 @@ function isLoggedIn(req, res, next) {
 
 	// if they aren't redirect them to the home page
 	res.redirect('/');
-}
+}};
