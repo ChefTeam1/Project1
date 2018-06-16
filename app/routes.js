@@ -1,37 +1,7 @@
-// app/routes.js
-module.exports = function(app, passport) {
 
-	// =====================================
-	// HOME PAGE (with login links) ========
-	// =====================================
-	
-// home page
-app.get('/', function(req, res) {
-    res.render('index');
-});
+ module.exports = function(app, passport) {
 
 
-app.get('/newRecipe', function(req, res) {
-    res.render('newRecipe');
-});
-
-app.get('/database', function(req, res) {
-    res.render('allData');
-});
-
-app.get('/personal', function(req, res) {
-    res.render('personalPage');
-});
-app.get('/search', function(req, res) {
-    res.render('search');
-});
-app.get('/users', function(req, res) {
-    res.render('users');
-});
-
-app.get('/posts/:id', function(req, res) {
-    res.render('singleRecipe');
-});
 	// =====================================
 	// LOGIN ===============================
 	// =====================================
@@ -56,7 +26,7 @@ app.get('/posts/:id', function(req, res) {
             } else {
               req.session.cookie.expires = false;
             }
-        res.redirect('/');
+        res.redirect('/personalPage');
     });
 
 	// =====================================
@@ -70,7 +40,7 @@ app.get('/posts/:id', function(req, res) {
 
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/profile', // redirect to the secure profile section
+		successRedirect : '/personal', // redirect to the secure profile section
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
@@ -80,8 +50,8 @@ app.get('/posts/:id', function(req, res) {
 	// =====================================
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
-	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
+	app.get('/personal', isLoggedIn, function(req, res) {
+		res.render('personalPage', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
