@@ -59,6 +59,7 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
+<<<<<<< HEAD
 
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
@@ -77,6 +78,13 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
+=======
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        allowNull: false,
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       }

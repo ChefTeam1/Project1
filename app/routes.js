@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // app/routes.js
 // var express = require("express");
 // var bodyParser = require("body-parser");
@@ -78,6 +79,10 @@
 
 
 
+=======
+
+ module.exports = function(app, passport) {
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 
 
 	// =====================================
@@ -105,7 +110,10 @@
               req.session.cookie.expires = false;
             }
         res.redirect('/personalPage');
+<<<<<<< HEAD
         res.redirect('/personal');
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     });
 
 	// =====================================
@@ -130,8 +138,12 @@
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/personal', isLoggedIn, function(req, res) {
+<<<<<<< HEAD
 		res.render('personal.ejs', {
 		res.render('profile.ejs', {
+=======
+		res.render('personalPage', {
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 			user : req.user // get the user out of session and pass to template
 		});
 	});

@@ -7,33 +7,25 @@ var Users = require('./models')['Users'];
 var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
 var Posts = require('./models')['Posts'];
+<<<<<<< HEAD
 //var Recipe2 = require('./models')['Recipes2'];
 
 var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
 
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 ///////////////////////////////////
-// passport stuff
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
-var passport = require('passport');
-var flash = require('connect-flash');
 
 var app = express();
 
-require('./config/passport')(passport); // pass passport for configuration
-
-
-
 // set up our express application
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 //app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
@@ -82,8 +74,14 @@ Users.sync({
 
 
 Ingredients.sync();
+=======
+////////////////////////////////////////////////////////
+Posts.sync();
+Steps.sync();
+Ingredients.sync();
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 Recipe.sync();
-Users.sync({force:true});
+
 
 
 app.use(express.static(__dirname + '/public'));
@@ -98,7 +96,6 @@ app.engine('handlebars', handlebars({
 
 app.set('view engine', 'handlebars');
 
-
 ////////////////////////////////////
 // adding recipes
 app.get('/', function (req, res) {
@@ -106,7 +103,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('/newRecipe', function (req, res) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     res.render('newRecipe');
 
     res.render('newRecipe'); 
@@ -114,6 +114,7 @@ app.get('/newRecipe', function (req, res) {
 
 
 app.post('/newRecipe', function (req, res) {
+<<<<<<< HEAD
 
     // var recipe = req.body;
     // Recipe.create({
@@ -125,14 +126,29 @@ app.post('/newRecipe', function (req, res) {
     //     score: 0,
 
 
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     var recipe = req.body;
     Recipe.create({
         title: recipe.title,
         image: recipe.image,
+<<<<<<< HEAD
         // ingredients: recipe.ingredients,
         // steps: recipe.steps,
+=======
+        ing1: recipe.ingredients1,
+        ing2: recipe.ingredients2,
+        ing3: recipe.ingredients3,
+        ing4: recipe.ingredients4,
+        ing5: recipe.ingredients5,
+        step1: recipe.steps1,
+        step2: recipe.steps2,
+        step3: recipe.steps3,
+        step4: recipe.steps4,
+        step5: recipe.steps5,
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
         healthlabel: recipe.healthlabel,
-        score: 0,
+        score: 0
     }).then(function (data) {
         console.log('data', data);
         // res.redirect('/recipes/' + data.dataValues.id);
@@ -155,6 +171,7 @@ app.get('/recipes/:id', function (req, res) {
         where: {
             id: req.params.id
         },
+<<<<<<< HEAD
         
     }).then(function (result) {
         // console.log('singleRecipe', recipe);
@@ -271,13 +288,20 @@ app.get('/recipes/:id', function (req, res) {
 
     }).then(function (recipe) {
         // console.log('singleRecipe', recipe);
+=======
+
+    }).then(function (recipe) {
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
         res.render('singleRecipe', {
             recipe: recipe
         });
     // recipe = result;
         // console.log("saved recipe is ", recipe);
     });
+});
 
+
+<<<<<<< HEAD
 
     // Steps.findOne({
     //     where: {
@@ -314,6 +338,8 @@ app.get('/recipes/:id', function (req, res) {
 });
 
 // /////////////////////////
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 // // 
 
 app.get('/personal', function (req, res) {
@@ -326,6 +352,7 @@ app.get('/users', function (req, res) {
     res.render('users');
 });
 
+<<<<<<< HEAD
 // /////////////////////////// 
 // // recipe ranking
 
@@ -334,11 +361,18 @@ app.get('/allrecipes/', function (req, res) {
     // var recipe;
     // var ingredients;
 
+=======
+
+// // recipe ranking
+
+app.get('/allrecipes/', function (req, res) {
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     Recipe.findAll({
         order: [
             ['score', 'DESC']
         ]
     }).then(function (recipe) {
+<<<<<<< HEAD
 
         //console.log(Recipe.dataValues);
         //console.log('//////////////////////////////////////////////////////////////////////////////////////////////////////////');
@@ -358,6 +392,8 @@ app.get('/allrecipes/', function (req, res) {
     }
 ).then(function (recipe) {
         console.log('allData', recipe);
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
         res.render('allData', {
             recipes: recipe
         });
@@ -439,6 +475,7 @@ app.get('/allrecipes/', function (req, res) {
 // });
 
 
+<<<<<<< HEAD
 
 //////////////////////
 //logins
@@ -457,6 +494,8 @@ app.get('/allrecipes/', function (req, res) {
 
 
 // //////////////////////
+=======
+>>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 // //logins
 
 app.get('/signup', function (req, res) {
@@ -474,6 +513,7 @@ app.post('/signup', function (req, res) {
         res.redirect('/');
     });
 });
+
 
 
 //////////////////////////
