@@ -1,10 +1,9 @@
-// app/routes.js
-// var express = require("express");
-// var bodyParser = require("body-parser");
-// var handlebars = require('express-handlebars');
-// var models = require('../models');
-// var Recipe = require('../models')['Recipe'];
-// var Users = require('../models')['Users'];
+// var models = require('./models');
+// var Recipe = require('./models')['Recipe'];
+// var Users = require('./models')['Users'];
+// // var Ingredients = require('./models')['Ingredients'];
+// // var Steps = require('./models')['Steps'];
+// var Posts = require('./models')['Posts'];
  module.exports = function(app, passport) {
 
 	// =====================================
@@ -80,12 +79,6 @@
 
 
 
- module.exports = function(app, passport) {
-
-
-// module.exports = function(app, passport) {
-
-
 	// =====================================
 	// LOGIN ===============================
 	// =====================================
@@ -111,8 +104,6 @@
 				req.session.cookie.expires = false;
             }
         res.redirect('/personalPage');
-
-        // res.redirect('/personal');
     });
 
 	// =====================================
