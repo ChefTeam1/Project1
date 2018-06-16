@@ -42,6 +42,30 @@
 
 
                             </h2>
+                            <div>createdAt: {{recipe.createdAt}}</div>
+                            <h2>Image: {{recipe.image}}</h2>
+
+                            <h2>Ingredients: {{recipe.ingredients}}</h2>
+                            <h2>Ingredients: 
+                                {{#each ingredients}}
+                                {{ingredients.ing1}}
+                                {{ingredients.ing2}}
+                                {{ingredients.ing3}}
+                                {{ingredients.ing4}}
+                                {{ingredients.ing5}}
+                                {{ingredients.ing6}}
+                                {{ingredients.ing7}}
+                                {{ingredients.ing8}}
+                                {{ingredients.ing9}}
+                                {{ingredients.ing10}}
+                                {{ingredients.ing11}}
+                                {{ingredients.ing12}}
+                                {{ingredients.ing13}}
+                                {{ingredients.ing14}}
+                                {{ingredients.ing15}}
+                                {{/each}}
+                                </h2>
+                            <h2>Steps: {{recipe.steps}}</h2>
                             <h2>Score: {{recipe.score}}</h2>
                         </div>
                     </article>
