@@ -114,7 +114,6 @@ module.exports = function (passport) {
 
                     return done(null, rows[0]);
                     return done(null, rows[0].id);
-                   
                 });
             })
     );
