@@ -274,7 +274,7 @@ app.get('/recipes/:id', function (req, res) {
         res.render('singleRecipe', {
             recipe: recipe
         });
-       // recipe = result;
+    // recipe = result;
         // console.log("saved recipe is ", recipe);
     });
 
