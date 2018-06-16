@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Steps = sequelize.define('Steps', {
+    score: DataTypes.INTEGER,
     s1: DataTypes.STRING,
     s2: DataTypes.STRING,
     s3: DataTypes.STRING,

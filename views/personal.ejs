@@ -18,14 +18,68 @@
     <!-- Stylesheet tags -->
 </head>
 <body>
-    {{> navbar/navpart}}
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class = "container">
+            <div class="navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class = "navbar-brand">
+            <a href = "/" class ="navbar-item">
+            <span class="icon is-large">
+                <i class="fas fa-lg fa-utensils"></i>
+            </span>
+            <h1 class="title has-text-centered">
+                RecipeMe
+            </h1>
+            </a>
+        </div>
+        <div  class="navbar-menu">
+           <div class=" navbar-start">
+                <a class="navbar-item"  href="/search">
+                    <span class="icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    &nbsp; Search for a Recipe
+                </a>
+           </div>
+            <a class="navbar-item"  href="/allrecipes">
+                <span class="icon">
+                    <i class="fas fa-book"></i>
+                </span>
+                &nbsp; Recipe Database
+            </a>
+            <a class="navbar-item"  href="/users">
+                <span class="icon">
+                    <i class="fas fa-users"></i>
+                </span>
+                &nbsp; View Our Users
+            </a>
+            <a class="navbar-item"  href="/newRecipe">
+                <span class="icon">
+                    <i class="fas fa-plus-circle"></i>
+                </span>
+                &nbsp; Add a Recipe
+            </a>
+           <div class = "navbar-end">
+            <a class="navbar-item "  href="/">
+                <span class="icon">
+                    <i class="fas fa-sign-out"></i>
+                </span>
+                &nbsp; Logout
+                </a>
+           </div> 
+        </div>
+        </div>
+    </nav>
 <section class="section">
     <div class="container">
         <div class="tile is-ancestor">
             <div class="tile is-parent is-vertical">
                 <article class="tile is-child notification is-danger">
                     <h1 class = "title has-text-centered">
-                        ___'s Profile
+                        <%= user.username %>'s Profile
                     </h1>
                     <div class = "has-text-centered box">
                         <h2>
@@ -41,6 +95,7 @@
                             total contributions
                         </p>
                     </div>
+                    
                     <div class = "content">
                         <article class="media">
                             <figure class="media-left">
@@ -163,3 +218,6 @@
 </footer>
 </body>
 </html>
+
+
+Add Comment

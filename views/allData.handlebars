@@ -18,6 +18,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Stylesheet tags -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -30,89 +31,279 @@
                 <div class="tile is-parent is-8">
                     <article class="tile is-child notification is-danger">
                         <div class="content" method="GET" action="/database/">
-                           <div id="search">
-                            <p class="title has-text-centered">
-                                Recipe Database
-                            </p>
-                            <p class="subtitle has-text-centered">
-                                Top Recipes
-                                 {{#each recipes}}
-                            <div>
-                                 {{this.title}}
-                            </div>
-                            <div>
-                                {{this.image}}
-                            </div>
-                            <div>
-                                Ingredients: {{this.ingredients}}
-                            </div>
-                            <div>
-                                Steps: {{this.steps}}
-                            </div>
-                            <div>
-                                Score: {{this.score}}
-                            </div>
-                            {{/each}}
-                            </p>
-                            <div class="content">
+                            <div id="search">
+                                <p class="title has-text-centered">
+                                    Recipe Database
+                                </p>
+                                <p class="subtitle has-text-centered">
+                                    Top Recipes {{#each recipes}}
+                                    <div>
+                                        Recipe Name: {{this.title}}
+                                    </div>
+                                    <div>
+                                        Image
+                                        <img class="someClass" src="{{this.image}}" />
+                                    </div>
+                                    <div>
+                                        Score: {{this.score}}
+                                        <button class="button is-primary" id="upVote" type="submit">
+                                            up
+                                            </button>
+                                            <button class="button is-primary downVote" type="submit">
+                                            down
+                                            </button>
+                                            {{!-- <li class="list-group-item"> --}}
+                                        
+                                        <form class = "vote-up"  data-id="{{post._id}}">
+                                            <button type = "submit">Vote Up</button>
+                                        </form>
+
+                                        <form class="vote-down" data-id="{{post._id}}">
+                                        <button type="submit">Vote Down</button>
+                                        </form>
+                                    </div>
+                                    <div>
+                                        Ingredients: {{this.ing1}} {{this.ing2}} {{this.ing3}} {{this.ing4}} {{this.ing5}}
+                                    </div>
+                                    <div>
+                                        Score: {{this.step1}} {{this.step2}} {{this.step3}} {{this.step4}} {{this.step5}} {{/each}}
+                                        <div>
+                                            Ingredients:
+
+                                        </div>
+                                        <div>
+
+                                </p>
+                                <div class="content">
 
 
-                           
 
-                                </div> <!--end content-->
-                        </div>
-                        
-                            </div> <!-- end search id-->
-                        </article> <!-- end red tile-->
+
+                                </div>
+                                <!--end content-->
+                                </div>
+
+                                </div>
+                                <!-- end search id-->
+                    </article>
+                    <!-- end red tile-->
                     </div>
                     <div class="tile is-parent is-vertical">
 
 
-                    <article class="tile is-child notification is-warning">
-                        <p class="title has-text-centered">
-                            Top Recipe
-                        </p>
-                        <p class="subtitle has-text-centered">
-                            Date
-                        </p>
-                        <div class="content box">
+                        <article class="tile is-child notification is-warning">
+                            <p class="title has-text-centered">
+                                Top Recipe
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                Date
+                            </p>
+                            <div class="content box">
 
-                        </div>
-                    </article>
-                    <article class="tile is-child notification is-primary">
-                        <p class="title has-text-centered">
-                            Top Chef
-                        </p>
-                        <p class="subtitle has-text-centered">
-                            This Week:
-                        </p>
-                        <div class="content box">
+                            </div>
+                        {{!-- </article>
+                        <article class="tile is-child notification is-primary">
+                            <p class="title has-text-centered">
+                                Top Chef
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                This Week:
+                            </p>
+                            <div class="content box">
 
-                        </div>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">
+                                ...tiles
+                            </p>
+                            <p class="subtitle">
+                                Bottom tile
+                            </p>
+                        </article>
+
+                                    </div>
+                                    <div>
+                                        Ingredients: {{this.ing1}} {{this.ing2}} {{this.ing3}} {{this.ing4}} {{this.ing5}}
+                                    </div>
+                                    <div>
+                                        Score: {{this.step1}} {{this.step2}} {{this.step3}} {{this.step4}} {{this.step5}} {{/each}}
+                                        <div>
+                                            Ingredients:
+
+                                        </div>
+                                        <div>
+
+                                </p>
+                                <div class="content">
+
+
+
+
+                                </div>
+                                <!--end content-->
+                                </div>
+
+                                </div>
+                                <!-- end search id-->
                     </article>
-                    <article class="tile is-child notification is-warning">
-                        <p class="title">
-                            ...tiles
-                        </p>
-                        <p class="subtitle">
-                            Bottom tile
-                        </p>
+                    <!-- end red tile-->
+                    </div>
+                    <!-- end vert 2 tile div-->
+                    </div>
+                    <!--end is-8 vertical --> --}}
+
+                                    <div>
+                                        Score: {{this.score}}
+
+
+                                        <form data-id="{{this.title}}">
+                                            <button class="button is-primary" id="upVote" type="submit">
+                                                up
+                                            </button>
+                                        </form>
+
+                                        </form>
+                                        <button class="button is-primary downVote" type="submit">
+                                            down
+                                        </button>
+
+                                    </div>
+                                    <div>
+                                        Ingredients: {{this.ing1}} {{this.ing2}} {{this.ing3}} {{this.ing4}} {{this.ing5}}
+                                    </div>
+                                    <div>
+                                        Score: {{this.step1}} {{this.step2}} {{this.step3}} {{this.step4}} {{this.step5}} {{/each}}
+                                        <div>
+                                            Ingredients:
+
+                                        </div>
+                                        <div>
+
+                                </p>
+                                <div class="content">
+
+
+
+
+                                </div>
+                                <!--end content-->
+                                </div>
+
+                                </div>
+                                <!-- end search id-->
                     </article>
+                    <!-- end red tile-->
+                    </div>
+                    <div class="tile is-parent is-vertical">
+
+
+                        <article class="tile is-child notification is-warning">
+                            <p class="title has-text-centered">
+                                Top Recipe
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                Date
+                            </p>
+                            <div class="content box">
+
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-primary">
+                            <p class="title has-text-centered">
+                                Top Chef
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                This Week:
+                            </p>
+                            <div class="content box">
+
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">
+                                ...tiles
+                            </p>
+                            <p class="subtitle">
+                                Bottom tile
+                            </p>
+                        </article>
+                    </div>
+                    <!-- end vert 2 tile div-->
+                    </div>
+                    <!--end is-8 vertical -->
                 </div>
-                <!-- end vert 2 tile div-->
-            </div>
-            <!--end is-8 vertical -->
-        </div>
     </section>
+
+
+                        <article class="tile is-child notification is-warning">
+                            <p class="title has-text-centered">
+                                Top Recipe
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                Date
+                            </p>
+                            <div class="content box">
+
+                            </div>
+                        {{!-- </article>
+                        <article class="tile is-child notification is-primary">
+                            <p class="title has-text-centered">
+                                Top Chef
+                            </p>
+                            <p class="subtitle has-text-centered">
+                                This Week:
+                            </p>
+                            <div class="content box">
+
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">
+                                ...tiles
+                            </p>
+                            <p class="subtitle">
+                                Bottom tile
+                            </p>
+                        </article>
+                    </div>
+                    <!-- end vert 2 tile div-->
+                    </div>
+                    <!--end is-8 vertical --> --}}
+                </div>
+    </section>
+
+
+
+<script>
+  </script>
     <footer class="footer">
         <div class="container">
             <div class="content has-text-centered">
                 <p>
-                    blah blah blah (for now)
+                    blah blah blah (for now) 
                 </p>
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript">
+
+
+        $(document).on('click', '#upVote', function () {
+
+            var thisid = $(this).data('title');
+            console.log('/////////////////////////////////////////////////////////////////////////////////////');
+            console.log(thisid);
+            console.log('hti hit hit');
+            
+
+        });
+
+
+    </script>
+
+
 </body>
 
 </html>

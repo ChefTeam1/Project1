@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Recipe = sequelize.define('Recipe', {
+  var Recipes2 = sequelize.define('Recipes2', {
     title: DataTypes.STRING,
     image: DataTypes.STRING,
     ing1: DataTypes.STRING,
@@ -15,14 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     step5: DataTypes.STRING,
     score: DataTypes.INTEGER
   }, {});
-  Recipe.associate = function(models) {
-    // Recipe.belongsTo(models.Users, {
-    //   // foreignKey: {
-    //   //   allowNull: false
-    //   // }
-    // });
+  Recipes2.associate = function(models) {
+    // associations can be defined here
   };
-  return Recipe;
+  return Recipes2;
 };
-
- 
