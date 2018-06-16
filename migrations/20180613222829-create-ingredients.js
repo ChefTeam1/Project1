@@ -95,12 +95,3 @@ module.exports = {
     return queryInterface.dropTable('Ingredients');
   }
 };
-
-
-
-};
-
-};
-
-};
-};

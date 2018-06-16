@@ -7,17 +7,10 @@ var Users = require('./models')['Users'];
 var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
 var Posts = require('./models')['Posts'];
-<<<<<<< HEAD
-<<<<<<< HEAD
 //var Recipe2 = require('./models')['Recipes2'];
 
 var Ingredients = require('./models')['Ingredients'];
 var Steps = require('./models')['Steps'];
-
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
 ///////////////////////////////////
 
 var app = express();
@@ -27,9 +20,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 //app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
@@ -78,23 +68,19 @@ Users.sync({
 
 
 Ingredients.sync();
-=======
-////////////////////////////////////////////////////////
-Posts.sync();
-Steps.sync();
-Ingredients.sync();
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-Recipe.sync();
-
-
-=======
 ////////////////////////////////////////////////////////
 Posts.sync();
 Steps.sync();
 Ingredients.sync();
 Recipe.sync();
 
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
+
+////////////////////////////////////////////////////////
+// Posts.sync();
+// Steps.sync();
+// Ingredients.sync();
+// Recipe.sync();
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -115,13 +101,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/newRecipe', function (req, res) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     res.render('newRecipe');
 
     res.render('newRecipe'); 
@@ -129,28 +109,12 @@ app.get('/newRecipe', function (req, res) {
 
 
 app.post('/newRecipe', function (req, res) {
-<<<<<<< HEAD
-
-    // var recipe = req.body;
-    // Recipe.create({
-    //     title: recipe.title,
-    //     image: recipe.image,
-    //     // ingredients: recipe.ingredients,
-    //     // steps: recipe.steps,
-    //     healthlabel: recipe.healthlabel,
-    //     score: 0,
-
-
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     var recipe = req.body;
     Recipe.create({
         title: recipe.title,
         image: recipe.image,
-<<<<<<< HEAD
         // ingredients: recipe.ingredients,
         // steps: recipe.steps,
-=======
         ing1: recipe.ingredients1,
         ing2: recipe.ingredients2,
         ing3: recipe.ingredients3,
@@ -161,7 +125,6 @@ app.post('/newRecipe', function (req, res) {
         step3: recipe.steps3,
         step4: recipe.steps4,
         step5: recipe.steps5,
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
         healthlabel: recipe.healthlabel,
         score: 0
     }).then(function (data) {
@@ -186,7 +149,6 @@ app.get('/recipes/:id', function (req, res) {
         where: {
             id: req.params.id
         },
-<<<<<<< HEAD
         
     }).then(function (result) {
         // console.log('singleRecipe', recipe);
@@ -241,10 +203,7 @@ app.post('/newRecipe', function (req, res) {
         step5: recipe.steps5,
         healthlabel: recipe.healthlabel,
         score: 0
-<<<<<<< HEAD
 
-=======
->>>>>>> 794de6f82a67c6eb1e008fb1bf855a52cf0fa5e0
     }).then(function (data) {
         console.log('data', data);
         res.redirect('/recipes/' + data.dataValues.id);
@@ -345,7 +304,7 @@ app.get('/recipes/:id', function (req, res) {
     //     });
     // });
 
-});
+// });
 
 // /////////////////////////
 // // 
@@ -363,23 +322,23 @@ app.get('/users', function (req, res) {
 // /////////////////////////// 
 // // recipe ranking
 
-app.get('/allrecipes/', function (req, res) {
+// app.get('/allrecipes/', function (req, res) {
 
     // var recipe;
     // var ingredients;
 
 // // recipe ranking
 
-app.get('/allrecipes/', function (req, res) {
+// app.get('/allrecipes/', function (req, res) {
 
 // // recipe ranking
 
-app.get('/allrecipes/', function (req, res) {
-    Recipe.findAll({
-        order: [
-            ['score', 'DESC']
-        ]
-    }).then(function (recipe) {
+// app.get('/allrecipes/', function (req, res) {
+//     Recipe.findAll({
+//         order: [
+//             ['score', 'DESC']
+//         ]
+//     }).then(function (recipe) {
 
         //console.log(Recipe.dataValues);
         //console.log('//////////////////////////////////////////////////////////////////////////////////////////////////////////');
@@ -390,14 +349,12 @@ app.get('/allrecipes/', function (req, res) {
 // /////////////////////////// 
 // // recipe ranking
 app.get('/allrecipes/', function (req, res) {
-    
     Recipe.findAll(
         {
         order: [
             ['score', 'DESC']
         ]
-    }
-).then(function (recipe) {
+    }).then(function (recipe) {
         console.log('allData', recipe);
         res.render('allData', {
             recipes: recipe
@@ -482,7 +439,7 @@ app.get('/allrecipes/', function (req, res) {
 
 //////////////////////
 //logins
-});
+//});
 
 // // app.get('/allrecipes/', function (req, res) {
 // //         connection.query("SELECT * FROM recipes;", function(err, data) {
